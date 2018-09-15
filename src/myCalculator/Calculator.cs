@@ -11,9 +11,9 @@ namespace myCalculator
         public AnswerFirstQuestion FirstQuestion(int amount)
         {
             const int minimumAmount = 1;
-            if (amount < minimumAmount) return new AnswerFirstQuestion { IsError = true, ErrorMessage = "Input must more than zero" };
+            if (amount < minimumAmount) return null;
 
-            var result = new AnswerFirstQuestion { IsError = false, ErrorMessage = string.Empty };
+            var result = new AnswerFirstQuestion();
             if (amount >= 1000)
             {
                 result.ThousandBathAmount = (int)amount / 1000;
@@ -34,6 +34,11 @@ namespace myCalculator
                 result.FiftyBathAmount = (int)amount / 50;
                 amount %= 50;
             }
+            if (amount >= 20)
+            {
+                result.TwentyBathAmount = (int)amount / 20;
+                amount %= 20;
+            }
             if (amount >= 10)
             {
                 result.TenBathAmount = (int)amount / 10;
@@ -51,7 +56,7 @@ namespace myCalculator
         // Summary of consecutive numbers
         public string SecondQuestion(int amount)
         {
-            const int minimumAmount = 5;
+            const int minimumAmount = 1;
             if (amount < minimumAmount) return string.Empty;
 
             var result = string.Empty;
@@ -96,8 +101,7 @@ namespace myCalculator
         public int FiftyBathAmount { get; set; }
         public int TenBathAmount { get; set; }
         public int FiveBathAmount { get; set; }
+        public int TwentyBathAmount { get; set; }
         public int OneBathAmount { get; set; }
-        public bool IsError { get; set; }
-        public string ErrorMessage { get; set; }
     }
 }

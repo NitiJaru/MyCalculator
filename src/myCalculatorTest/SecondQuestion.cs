@@ -21,5 +21,15 @@ namespace myCalculatorTest
             var result = myCal.SecondQuestion(amount);
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-1)]
+        public void SecondQuestion_Failed(int amount)
+        {
+            var myCal = new Calculator();
+            var result = myCal.SecondQuestion(amount);
+            Assert.True(string.IsNullOrWhiteSpace(result));
+        }
     }
 }
