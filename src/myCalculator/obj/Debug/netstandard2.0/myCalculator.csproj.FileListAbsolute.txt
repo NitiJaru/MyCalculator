@@ -1,0 +1,9 @@
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\bin\Debug\netstandard2.0\myCalculator.deps.json
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\bin\Debug\netstandard2.0\myCalculator.dll
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\bin\Debug\netstandard2.0\myCalculator.pdb
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\obj\Debug\netstandard2.0\myCalculator.csprojAssemblyReference.cache
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\obj\Debug\netstandard2.0\myCalculator.csproj.CoreCompileInputs.cache
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\obj\Debug\netstandard2.0\myCalculator.AssemblyInfoInputs.cache
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\obj\Debug\netstandard2.0\myCalculator.AssemblyInfo.cs
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\obj\Debug\netstandard2.0\myCalculator.dll
+C:\Git\00-Hackathons\04-MyCalculator\src\myCalculator\obj\Debug\netstandard2.0\myCalculator.pdb
