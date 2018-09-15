@@ -1,4 +1,7 @@
 using System;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace myCalculator
 {
@@ -8,7 +11,7 @@ namespace myCalculator
         public AnswerFirstQuestion FirstQuestion(int amount)
         {
             const int minimumAmount = 1;
-            if (amount <= minimumAmount) return new AnswerFirstQuestion { IsError = true, ErrorMessage = "Input must more than zero" };
+            if (amount < minimumAmount) return new AnswerFirstQuestion { IsError = true, ErrorMessage = "Input must more than zero" };
 
             var result = new AnswerFirstQuestion { IsError = false, ErrorMessage = string.Empty };
             if (amount >= 1000)
@@ -42,6 +45,45 @@ namespace myCalculator
                 amount %= 5;
             }
             result.OneBathAmount = amount;
+            return result;
+        }
+
+        // Summary of consecutive numbers
+        public string SecondQuestion(int amount)
+        {
+            const int minimumAmount = 5;
+            if (amount < minimumAmount) return string.Empty;
+
+            var result = string.Empty;
+            var isEven = amount % 2 == 0;
+            if (isEven)
+            {
+                var divide = 2;
+                var rs = new int[0];
+                do
+                {
+                    rs = new int[++divide];
+                    var dividedNumber = (decimal)amount / divide;
+                    for (int index = 0; index < divide; index++)
+                    {
+                        if (index == 0) rs[index] = (int)Math.Floor(dividedNumber) - 1;
+                        else rs[index] = (int)Math.Floor(dividedNumber) + (index - 1);
+                    }
+                } while (rs.Sum(it => it) != amount);
+
+                for (int index = 0; index < divide; index++)
+                {
+                    if (index == divide - 1) result += $"{rs[index]}";
+                    else result += $"{rs[index]},";
+                }
+            }
+            else
+            {
+                var dividedNumber = (decimal)amount / 2;
+                var first = (int)Math.Floor(dividedNumber);
+                var second = (int)Math.Ceiling(dividedNumber);
+                result = $"{first},{second}";
+            }
             return result;
         }
     }
