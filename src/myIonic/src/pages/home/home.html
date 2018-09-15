@@ -7,8 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <form  (ngSubmit)="calculate()" #calculateForm="ngForm">
+        <label for="inputtext" class="text-center center-block">กรอกผลรวม</label>
+        <input type="text" class="form-control text-center clearfix" id="inputtext"
+        required
+        [(ngModel)]="input" name="inputtext"
+        #inputtext="ngModel">
+        <div [hidden]="inputtext.valid"
+       class="alert alert-danger">
+        Input is Invalid
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success center-block block-center clearfix" [disabled]="!calculateForm.form.valid">Calculate</button>
+    </form>
+    <br>
+    <div class="well-lg" style="background-color:lightgoldenrodyellow">
+      <label class="text-white text-center block-center">
+          {{answer}}
+      </label>
+    </div>
+
 </ion-content>
